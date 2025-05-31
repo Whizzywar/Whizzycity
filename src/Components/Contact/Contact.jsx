@@ -49,7 +49,7 @@ const Contact = () => {
         <ul>
           <li>
             <img src={mail_icon} alt="" />
-            Contact@UbaniWisdom.dev
+            ubaniwisdom480@gmail.com
           </li>
           <li>
             <img src={phone_icon} alt="" />
@@ -57,7 +57,7 @@ const Contact = () => {
           </li>
           <li>
             <img src={location_icon} alt="" />
-            77 Brokelyn,U.S.A
+            77 Brokelyn, U.S.A
           </li>
         </ul>
       </div>
