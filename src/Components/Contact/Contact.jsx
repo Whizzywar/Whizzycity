@@ -39,13 +39,10 @@ const Contact = () => {
           Send us a message <img src={msg_icon} />
         </h3>
         <p>
-          Verify the Directory Structure: Make sure your directory structure
-          matches the import paths. For instance, if your assets folder is in
-          the src directory, the paths should be correct as shown above.
-          Sometimes, using your IDE’s autocomplete feature canhelp ensure the
-          path is correct. Start typing the path and let the IDE suggest the
-          correct file.
+          welcome to our contact page, where you can reach out and we will be of
+          great assistance to you{" "}
         </p>
+
         <ul>
           <li>
             <img src={mail_icon} alt="" />
