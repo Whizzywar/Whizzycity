@@ -1,34 +1,41 @@
+import React, { useState } from "react";
 import "./Contact.css";
 import msg_icon from "../../assets/msg-icon.png";
 import mail_icon from "../../assets/mail-icon.png";
 import phone_icon from "../../assets/phone-icon.png";
 import location_icon from "../../assets/location-icon.png";
 import white_arrow from "../../assets/white-arrow.png";
-import React, { useState } from "react";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
 
   const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+    try {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+      if (!event.target.checkValidity()) {
+        return;
+      }
+      formData.append("access_key", "cc0483c4-8023-4b5b-9466-345fe6e3635e");
 
-    formData.append("access_key", "cc0483c4-8023-4b5b-9466-345fe6e3635e");
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+      const data = await response.json();
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Email Sent Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult("Email Sent Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setResult("Error submitting form. Please try again.");
     }
   };
 
