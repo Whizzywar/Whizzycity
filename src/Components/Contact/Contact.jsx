@@ -7,7 +7,7 @@ import location_icon from "../../assets/location-icon.png";
 import white_arrow from "../../assets/white-arrow.png";
 
 const Contact = () => {
-  const [result, setResult] = React.useState("");
+  const [result, setResult] = useState;
 
   const onSubmit = async (event) => {
     try {
@@ -74,7 +74,7 @@ const Contact = () => {
           <input
             type="text"
             name="name"
-            placeholder="Enter your name"
+            placeholder="Enter your message"
             required
           />
           <label>Phone Number</label>
