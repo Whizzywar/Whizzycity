@@ -49,7 +49,15 @@ const Navbar = () => {
           Testimonials
         </li>
         <li>
-          <Link className="btn">Contact</Link>
+          <Link
+            to="campus"
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="btn"
+          >
+            Contact
+          </Link>
         </li>
       </ul>
       <img src={menu_icon} alt="" className="menu-icon" onClick={toggleMenu} />
